@@ -1,6 +1,5 @@
 import sqlite3
 
-# Connect to SQLite database (or create if it doesn't exist)
 conn = sqlite3.connect("gesture_db.db")
 cursor = conn.cursor()
 
@@ -24,7 +23,6 @@ gestures = [
 
 cursor.executemany("INSERT INTO gesture (g_id, g_name) VALUES (?, ?)", gestures)
 
-# Save and close
 conn.commit()
 conn.close()
 
